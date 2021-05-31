@@ -1,8 +1,39 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import NuevaTareaModal from './components/nuevaTareaModal';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('Titulo del modal según el tipo', () => {
+  it('Modal Nueva Tarea', () => {
+
+    const handleNuevaTareaModalProps = {
+      open: true,
+      handleClose: ()=>{},
+      handleSubmit: ()=>{},
+      handleEditSubmit: ()=>{},
+      showNuevaTareaModal: ()=>{},
+      submitError: false,
+      tareaSelected: null
+    };
+    
+    const { getByText } = render(<NuevaTareaModal {...handleNuevaTareaModalProps}/>);
+    expect( getByText('Nueva Tarea')).toBeInTheDocument();
+    
+  });
+
+  it('Modal Editar Tarea', () => {
+
+    const handleNuevaTareaModalProps = {
+      open: true,
+      handleClose: ()=>{},
+      handleSubmit: ()=>{},
+      handleEditSubmit: ()=>{},
+      showNuevaTareaModal: ()=>{},
+      submitError: false,
+      tareaSelected: {id: "sadsa", descripcion: "fdsfds"}
+    };
+    
+    const { getByText } = render(<NuevaTareaModal {...handleNuevaTareaModalProps}/>);
+    expect( getByText('Editar Tarea')).toBeInTheDocument();
+    
+  });
+
 });
