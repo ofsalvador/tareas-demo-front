@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import { TextField, Button, FormControlLabel, Checkbox, Divider, Typography } from "@material-ui/core";
+import { TextField, Button, FormControlLabel, Checkbox, Typography } from "@material-ui/core";
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import Alert from '@material-ui/lab/Alert';
@@ -41,7 +41,7 @@ const TareaSchema = Yup.object().shape({
   vigente: Yup.boolean().oneOf([true, false], "Invalid value")
 });
 
-export default ({open, handleClose, handleSubmit, handleEditSubmit, submitError, tareaSelected}) => {
+const NuevaTareaModal = ({open, handleClose, handleSubmit, handleEditSubmit, submitError, tareaSelected}) => {
   
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
@@ -159,3 +159,4 @@ export default ({open, handleClose, handleSubmit, handleEditSubmit, submitError,
   </Modal>
 };
 
+export default NuevaTareaModal;

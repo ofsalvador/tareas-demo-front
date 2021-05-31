@@ -1,9 +1,6 @@
 
 import axios from "axios";
 import url from "url";
-import { createBrowserHistory } from 'history';
-
-const history = createBrowserHistory();
 
 let get  = null;
 let post = null;

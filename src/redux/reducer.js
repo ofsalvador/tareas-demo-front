@@ -16,12 +16,12 @@ export default function tareasReducer(
         return state;
       }
       case "update": {
-        var foundIndex = state.tareas.findIndex(tarea => tarea.id == payload.id);
+        var foundIndex = state.tareas.findIndex(tarea => tarea.id === payload.id);
         state.tareas[foundIndex] = payload;
         return state;
       }
       case "delete": {
-        return {tareas:state.tareas.filter(tarea=>tarea.id != payload)};
+        return {tareas:state.tareas.filter(tarea=>tarea.id !== payload)};
       }  
       default: {
         return state;

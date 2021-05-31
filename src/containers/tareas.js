@@ -97,9 +97,7 @@ function TareasContainer({tareas}) {
     
   };
     
-  useEffect(() => {
-    loadTareas();
-  }, []);
+  useEffect(() => loadTareas());
 
   const handleNuevaTareaModalProps = {
     open: openNuevaTareaModal,

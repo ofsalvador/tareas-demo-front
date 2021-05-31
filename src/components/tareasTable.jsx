@@ -46,7 +46,7 @@ function TareasTable({tareas, handleDelete, showEditTareaModal}) {
 
   const classes = useStyles();
 
-  if(tareas.length == 0) {
+  if(tareas.length === 0) {
     return <Alert severity="info" className={"mb-4"}>No existen tareas.</Alert>
   }
   
